@@ -5,14 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>es6扩展对象功能性 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="对象字面量语法 属性简写 1234567891011&#x2F;&#x2F;初始化值时属性名称与本地变量名称一致可以只写一个&#x2F;&#x2F;字面量函数可以缩写成func()&amp;#123;&amp;#125;function createPerson(name,age)&amp;#123;    return &amp;#123;        name,        age,        func()&amp;#123;            console">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6扩展对象功能性">
+<meta property="og:url" content="http://example.com/2020/09/26/es6%E6%89%A9%E5%B1%95%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD%E6%80%A7/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对象字面量语法 属性简写 1234567891011&#x2F;&#x2F;初始化值时属性名称与本地变量名称一致可以只写一个&#x2F;&#x2F;字面量函数可以缩写成func()&amp;#123;&amp;#125;function createPerson(name,age)&amp;#123;    return &amp;#123;        name,        age,        func()&amp;#123;            console">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-26T07:08:28.000Z">
+<meta property="article:modified_time" content="2020-09-26T11:46:25.727Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="es6, 对象, javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-es6扩展对象功能性" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-es6扩展对象功能性" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/26/es6%E6%89%A9%E5%B1%95%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD%E6%80%A7/" class="article-date">
   <time datetime="2020-09-26T07:08:28.000Z" itemprop="datePublished">2020-09-26</time>
@@ -77,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/26/es6%E6%89%A9%E5%B1%95%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD%E6%80%A7/">es6扩展对象功能性</a>
+    <h1 class="article-title" itemprop="name">
+      es6扩展对象功能性
     </h1>
   
 
@@ -147,85 +150,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-js闭包理解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/25/js%E9%97%AD%E5%8C%85%E7%90%86%E8%A7%A3/" class="article-date">
-  <time datetime="2020-09-25T02:08:26.000Z" itemprop="datePublished">2020-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/25/js%E9%97%AD%E5%8C%85%E7%90%86%E8%A7%A3/">js闭包理解</a>
-    </h1>
+    <a href="/2020/09/25/js%E9%97%AD%E5%8C%85%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js闭包理解</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h3><blockquote>
-<p>闭包是指能够访问另一个函数作用域的变量的函数</p>
-</blockquote>
-<p>eg:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span>  a = <span class="string">&#x27;变量1&#x27;</span></span><br><span class="line">     <span class="keyword">var</span>  inner = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info(a)</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">return</span> inner    <span class="comment">// inner 就是一个闭包函数，因为他能够访问到outer函数的作用域</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="从堆栈角度说起"><a href="#从堆栈角度说起" class="headerlink" title="从堆栈角度说起"></a>从堆栈角度说起</h3><p>​    js的基本变量是存放在栈中的，而对象的值一般是存放在堆中，栈是存放对象的引用（地址）</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200925101722999.png" alt="image-20200925101722999"></p>
-<p>​    而js里函数也是一个对象，所以它的引用一样被存放在栈中。并且，js的变量查找是在栈中实现的。所以函数可以调用其他函数的变量。</p>
-<p>eg：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(b)</span><br><span class="line">    &#125;</span><br><span class="line">    fn1()</span><br><span class="line">&#125;</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200925102009925.png" alt="image-20200925102009925"></p>
-<p>​        以上代码变量初始化顺序：全局变量a,fn入栈，fn执行后b，</p>
-<p>fn入栈，所以里面的函数自然可以调用外面函数的变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span>  a = <span class="string">&#x27;变量1&#x27;</span></span><br><span class="line">     <span class="keyword">var</span>  inner = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info(a)</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">return</span> inner    <span class="comment">// inner 就是一个闭包函数，因为他能够访问到outer函数的作用域</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span>  inner = outer()   <span class="comment">// 获得inner闭包函数</span></span><br><span class="line">inner()   <span class="comment">//&quot;变量1&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>当程序执行完var inner = outer()，其实outer的执行环境并没有被销毁，因为他里面的变量a仍然被被inner的函数作用域链所引用，当程序执行完inner(), 这时候，inner和outer的执行环境才会被销毁调；《JavaScript高级编程》书中建议：由于闭包会携带包含它的函数的作用域，因为会比其他函数占用更多内容，过度使用闭包，会导致内存占用过多。</p>
-</blockquote>
-<h3 id="实际应用中的问题"><a href="#实际应用中的问题" class="headerlink" title="实际应用中的问题"></a>实际应用中的问题</h3><p><strong>坑点1： 引用的变量可能发生变化</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> result = []</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        result[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info(i)</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个用es6块级变量就行了，es5用立即函数，把每次的i值传进去，这样绑定的实际上是传入参数，可以解决</p>
-<p><strong>坑点2: this指向问题</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">     name: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">     getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.info(<span class="built_in">this</span>.name)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">object.getName()()    <span class="comment">// underfined</span></span><br><span class="line"><span class="comment">// 因为里面的闭包函数是在window作用域下执行的，也就是说，this指向windows</span></span><br></pre></td></tr></table></figure>
-
-<p>return的尾调用也是如此，可以理解成其实是生成了一个函数放在全局作用域里面调用，所以this是指向windows</p>
-<p><strong>坑点3：内存泄露问题</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">showId</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>)</span><br><span class="line">    el.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      aler(el.id)   <span class="comment">// 这样会导致闭包引用外层的el，当执行完showId后，el无法释放</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改成下面</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">showId</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">&quot;app&quot;</span>)</span><br><span class="line">    <span class="keyword">var</span> id  = el.id</span><br><span class="line">    el.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      aler(id) </span><br><span class="line">    &#125;</span><br><span class="line">    el = <span class="literal">null</span>    <span class="comment">// 主动释放el</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个挺常见，所以不要随便乱用闭包，如果绑定在一个一直存在的对象上，很可能会导致内存占用过多</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/25/js%E9%97%AD%E5%8C%85%E7%90%86%E8%A7%A3/" data-id="ckfhmxbzt0001nsuxgnkc1f3s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">JavaScript, 学习笔记</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
